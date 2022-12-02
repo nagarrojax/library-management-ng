@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>BookStore</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    .mySlides {
+      display: none;
+    }
+  </style>
+  <body>
+    <app-header></app-header>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width: 2000px; margin-top: 46px">
+      
+
+      <div
+        class="w3-container w3-content w3-center w3-padding-64"
+        style="max-width: 800px"
+        id="band"
+      >
+        <h2 class="w3-wide">Nagarro Book Library</h2>
+        <p class="w3-opacity"><i>Reading is the connection</i></p>
+        <p class="w3-justify">
+          Library, Collection of information resources, in print or in other
+          forms, that is organized and made accessible for reading or study. The
+          word derives from the Latin liber (“book”). The origin of libraries
+          lies in the keeping of written records, a practice that dates at least
+          to the 3rd millennium BCE in Babylonia. The first libraries as
+          repositories of books were those of the Greek temples and those
+          established in conjunction with the Greek schools of philosophy in the
+          4th century BCE. Today’s libraries frequently contain periodicals,
+          microfilms, tapes, videos, compact discs, and other materials in
+          addition to books. The growth of online communications networks has
+          enabled library users to search electronically linked databases
+          worldwide.
+        </p>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-third">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2A6o0Uvn1W6Sei9Or9iQrz6vL1zao9cxFdg&usqp=CAU"
+              class="w3-round w3-margin-bottom"
+              alt="Random Name"
+              style="width: 20%"
+              style="height: 10.5rem"
+            />
+            <p style="font-weight: bold">Mr. John Lannister</p>
+            <p style="font-style: italic">Librarian</p>
+          </div>
+          <div class="w3-third">
+            <img
+              src="https://www.rutgers.edu/sites/default/files/lg_nr22hicksonmartha2202n.jpg"
+              class="w3-round w3-margin-bottom"
+              alt="Random Name"
+              style="width: 90%"
+              style="height: 10.5rem"
+            />
+            <p style="font-weight: bold">Ms. Jaenece Riverlake</p>
+            <p style="font-style: italic">Librarian</p>
+          </div>
+          <div class="w3-third">
+            <img
+              src="https://unewsonline.com/wp-content/uploads/2018/04/DSC_9450-900x596.jpg"
+              class="w3-round"
+              alt="Random Name"
+              style="max-width: 90%"
+              style="height: 10.5rem"
+            />
+            <p style="font-weight: bold">Mr. Thomas Douglas Jr</p>
+            <p style="font-style: italic">
+              Library Coordinator/Supervisor/Director
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Tour Section -->
+      <div class="w3-teal" id="tour">
+        <div
+          class="w3-container w3-content w3-padding-64"
+          style="max-width: 800px"
+        >
+          <h2 class="w3-wide w3-center">Library Locations</h2>
+
+          <div class="w3-row-padding w3-padding-32" style="margin: 0 -16px">
+            <div class="w3-third w3-margin-bottom">
+              <img
+                src="https://media.gettyimages.com/photos/community-library-brick-building-front-entrance-picture-id172919971?k=20&m=172919971&s=612x612&w=0&h=IzE50SAUFdRWqu5o5mqjgwEsUjoa6BYe-TSUsX30fKc="
+                alt="New York"
+                style="height: 10.2rem"
+                class="w3-hover-opacity"
+                style="width: 100%"
+              />
+              <div class="w3-container w3-white">
+                <p><b>New Jersey</b></p>
+                <p class="w3-opacity">Established in 1992</p>
+                <p>
+                  Serving the second largest city in New Jersey and located on
+                  the Hudson River
+                </p>
+                <button
+                  class="w3-button w3-black w3-margin-bottom"
+                  (click)="openNewtab('jersey')"
+                >
+                  Find in Map
+                </button>
+              </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+              <img
+                src="https://www.bcslibrary.org/wp-content/uploads/2022/02/carnegie-bg.jpg"
+                alt="Paris"
+                style="height: 10.2rem"
+                class="w3-hover-opacity"
+                style="width: 100%"
+              />
+              <div class="w3-container w3-white">
+                <p><b>Bryan</b></p>
+                <p class="w3-opacity">Established in 1972</p>
+                <p>
+                  In the largest city in College Station and located on the
+                  Bryan, Greater Texas Bay area
+                </p>
+                <button
+                  class="w3-button w3-black w3-margin-bottom"
+                  (click)="openNewtab('bryan')"
+                >
+                  Find in Map
+                </button>
+              </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+              <img
+                src="http://4.bp.blogspot.com/-w9FsGMYaBiY/UkyLVb3RnbI/AAAAAAAAAKo/eT1FxTxUKsM/s1600/Library+Building.JPG"
+                alt="San Francisco"
+                style="height: 10.2rem"
+                class="w3-hover-opacity"
+                style="width: 100%"
+              />
+              <div class="w3-container w3-white">
+                <p><b>Jacksonville</b></p>
+                <p class="w3-opacity">Established in 1998</p>
+                <p>
+                  Located in the second largest educated city in Florida and
+                  located on the city center
+                </p>
+                <button
+                  class="w3-button w3-black w3-margin-bottom"
+                  (click)="openNewtab('florida')"
+                >
+                  Find in Map
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Contact Section -->
+      <div
+        class="w3-container w3-content w3-padding-64"
+        style="max-width: 800px"
+        id="contact"
+      >
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <p class="w3-opacity w3-center">
+          <i>Got Questions? Looking for your favorite book?</i>
+        </p>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width: 30px"></i> Jacksonville,
+            US<br />
+            <i class="fa fa-phone" style="width: 30px"></i> Phone: +1 813 888
+            8888<br />
+            <i class="fa fa-envelope" style="width: 30px"> </i> Email:
+            google.mail@googlemail.com<br />
+          </div>
+          <div class="w3-col m6">
+            <form action="/action_page.php" target="_blank">
+              <div class="w3-row-padding" style="margin: 0 -16px 8px -16px">
+                <div class="w3-half">
+                  <input
+                    class="w3-input w3-border"
+                    type="text"
+                    placeholder="Name"
+                    required
+                    name="Name"
+                  />
+                </div>
+                <div class="w3-half">
+                  <input
+                    class="w3-input w3-border"
+                    type="text"
+                    placeholder="Email"
+                    required
+                    name="Email"
+                  />
+                </div>
+              </div>
+              <input
+                class="w3-input w3-border"
+                type="text"
+                placeholder="Message"
+                required
+                name="Message"
+              />
+              <button
+                class="w3-button w3-black w3-section w3-right"
+                type="button"
+                (click)="userAction()"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Page Content -->
+    </div>
+
+    <!-- Image of location/map -->
+    <img
+      src="https://static01.nyt.com/images/2015/10/24/opinion/24manguel/24manguel-superJumbo.jpg"
+      class="w3-image"
+      style="width: 100%"
+    />
+    <!-- Footer -->
+    <app-footer></app-footer>
+  </body>
+</html>

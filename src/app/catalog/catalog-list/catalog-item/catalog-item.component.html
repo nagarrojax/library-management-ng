@@ -1,0 +1,21 @@
+<a 
+         
+        class="list-group-item clearfix" 
+        >
+        <span >
+            <img 
+                [src] = "catalog.imagePath"
+                alt="{{catalog.title}" 
+                class="img-responsive" 
+                style="width: 100%;">
+        </span>
+        <div >
+            <h4 class="list-group-item-heading" >{{ catalog.title }}</h4>
+            <p class="list-group-item-text">{{ catalog.author}}</p>
+            <p class="list-group-item-text">{{ catalog.year}}</p>
+            <button class="btn btn-primary"  (click)="onUpdateClick(catalog.title)"   >Update </button>
+            
+
+        </div>
+        
+     </a>

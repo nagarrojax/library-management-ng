@@ -1,0 +1,18 @@
+<app-search (searchTextChanged)="onSearchTextEntered($event)" class="searchFunction"></app-search>
+<div class="cardComp " >
+        
+        <div *ngFor="let catalogEl of catalog" class="catalog">
+        <app-catalog-item *ngIf="searchText === '' || catalogEl.title.toLowerCase().includes(searchText) "
+        [catalog]="catalogEl"
+        (catalogSelected) = "oncatalogSelected(catalogEl)"
+        
+        > </app-catalog-item>
+    </div>
+    
+    </div>
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+<body >
+
+<form [formGroup] = "appBooksForm" (ngSubmit)="onSubmit()"  class="form">
+    <p>
+        <mat-form-field class="w-75" appearance="outline"  style="background-color: white;" >
+            <mat-label style="color: black;">Title</mat-label>
+            <input matInput type="text" formControlName = "title" [ngModel]="userData.title">
+            <mat-error *ngIf="appBooksForm.get('title')?.hasError('required')">
+                Title is <strong>required</strong>
+              </mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="w-75" appearance="outline"  style="background-color: white;" >
+          <mat-label style="color: black;">ISBN</mat-label>
+          <input matInput type="text" formControlName = "isbn" [ngModel]="userData.isbn">
+          <mat-error *ngIf="appBooksForm.get('isbn')?.hasError('required')">
+              ISBN is <strong>required</strong>
+            </mat-error>
+      </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="w-75" appearance="outline"  style="background-color: white;" >
+        <mat-label style="color: black;">Page Count</mat-label>
+        <input matInput type="text" formControlName = "pageCount" [ngModel]="userData.pageCount">
+        <mat-error *ngIf="appBooksForm.get('pageCount')?.hasError('required')">
+            Page Count is <strong>required</strong>
+          </mat-error>
+    </mat-form-field>
+</p>
+<p>
+  <mat-form-field  appearance="fill" >
+    <mat-label >Published Date</mat-label>
+    <input matInput formControlName = "publishedDate" [matDatepicker]="publishedDate" [(ngModel)]="userData.publishedDate">
+    <!-- <p>{{userData.publishedDate}}</p> -->
+    <mat-datepicker  #publishedDate ></mat-datepicker>
+    <mat-datepicker-toggle matIconSuffix [for]="publishedDate"></mat-datepicker-toggle>
+    
+  </mat-form-field>
+</p>
+
+
+  <mat-radio-group  formControlName="status" [ngModel]="userData.status">
+    <mat-radio-button value="published" >Published</mat-radio-button>
+    <mat-radio-button value="unpublished" > Unpublished</mat-radio-button>
+  </mat-radio-group>
+  
+
+<p>
+  <mat-form-field class="w-75" appearance="outline"  style="background-color: white;" >
+      <mat-label style="color: black;">Short Description</mat-label>
+      <textarea matInput type="text" formControlName = "shortDescription" [ngModel]="userData.shortDescription"></textarea>
+      <mat-error *ngIf="appBooksForm.get('shortDescription')?.hasError('required')">
+          Short Description is <strong>required</strong>
+        </mat-error>
+  </mat-form-field>
+</p>
+    
+    <p>
+      <mat-form-field class="w-75" style="background-color: white ;" appearance="outline">
+        <mat-label style="color: black;">Select Author</mat-label>
+        <mat-select formControlName = "author" [ngModel]="userData.author">
+          
+          <mat-option 
+          *ngFor="let n of authorOfForms"
+          [value]="n">{{n}}</mat-option>
+          <mat-error
+            *ngIf="
+            appBooksForm.get('author')?.hasError('author') &&
+              !appBooksForm.get('author')?.hasError('author')
+            "
+          > Enter Author 
+          </mat-error>
+          <mat-error *ngIf="appBooksForm.get('author')?.hasError('author')">
+            Author is <strong>required</strong>
+          </mat-error>
+        </mat-select>
+        
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="w-75" style="background-color: white ;" appearance="outline">
+        <mat-label style="color: black;">Select Type</mat-label>
+        <mat-select formControlName = "type" [ngModel]="userData.type">
+          
+          <mat-option 
+          
+          value="online">Online</mat-option>
+          <mat-option 
+          
+          value="physical">Physical</mat-option>
+          
+        </mat-select>
+        
+      </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="w-75" style="background-color: white ;" appearance="outline">
+            <mat-label style="color: black;">Image Url</mat-label>
+            <input matInput type="text"  formControlName = "imagePath" [ngModel]="userData.imagePath">
+            <mat-error
+        *ngIf="
+        appBooksForm.get('imagePath')?.hasError('minlength') &&
+          !appBooksForm.get('imagePath')?.hasError('required')
+        "
+      >
+        Image URL should alteast be <strong>5 characters</strong>
+      </mat-error>
+      <mat-error *ngIf="appBooksForm.get('imagePath')?.hasError('required')">
+        Image URL is <strong>required</strong>
+      </mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="w-75" style="background-color: white ;" appearance="outline">
+            <mat-label style="color: black;">Year</mat-label>
+            <input matInput type="text"  formControlName = "year" [ngModel]="userData.year">
+            <mat-error
+            *ngIf="
+            appBooksForm.get('year')?.hasError('year') &&
+              !appBooksForm.get('year')?.hasError('year')
+            "
+          > Enter Year 
+          </mat-error>
+          <mat-error *ngIf="appBooksForm.get('year')?.hasError('year')">
+            Year is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </p>
+    <!-- <p>
+    <mat-form-field  appearance="outline" >
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName = "year" [matDatepicker]="year">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="year"></mat-datepicker-toggle>
+      <mat-datepicker  #year></mat-datepicker>
+    </mat-form-field>
+  </p> -->
+    <button mat-raised-button type="submit"  style="color: black ;" [disabled]="buttonClick === true">Save</button>
+    <button mat-raised-button type="submit"  style="color: black ;" (click)="onUpdateButtonClicked()" [disabled]="buttonClick === false">Update</button>
+</form>
+
+
+</body>
+
+
+

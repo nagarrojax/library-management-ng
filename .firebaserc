@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "frontendnagarro": {
+      "hosting": {
+        "projectNagarro": [
+          "frontendnagarro"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "frontendnagarro"
+  }
+}
